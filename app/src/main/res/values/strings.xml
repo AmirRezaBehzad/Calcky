@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Calcky</string>
+    <string name="width_and_height">85</string>
 </resources>
