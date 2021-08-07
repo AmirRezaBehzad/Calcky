@@ -307,6 +307,15 @@ public class MainActivity extends AppCompatActivity {
                         num_one = result;
                         operator = "";
                     }
+
+                    else if (operator.equals("%"))
+                    {
+                        num_two = Double.parseDouble(edittxt.getText().toString());
+                        result = num_two / 100;
+                        edittxt.setText(String.valueOf(result));
+                        num_one = result;
+                        operator = "";
+                    }
                 }
             }
         });
@@ -350,5 +359,58 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_percnet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if (edittxt.getText().toString().equals("") || operator.equals(""))
+                {
+                    if(edittxt.getText().toString().equals(""))
+                    {
+
+                    }
+                    else if (edittxt.getText().toString().equals("") != true)
+                    {
+                        num_one = Double.parseDouble(edittxt.getText().toString());
+                        operator = "%";
+                        edittxt.setText("");
+                    }
+                }
+                else
+                {
+                    num_two = Double.parseDouble(edittxt.getText().toString());
+                    if (operator.equals("+"))
+                    {
+                        num_one += (num_two * num_one) / 100;
+                        result = num_one;
+                        edittxt.setText(String.valueOf(result));
+                        num_one = result;
+                        operator = "";
+                    }
+                    else if (operator.equals("-"))
+                    {
+                        num_one -= (num_two * num_one) / 100;
+                        result = num_one;
+                        edittxt.setText(String.valueOf(result));
+                        num_one = result;
+                        operator = "";
+                    }
+                    else if (operator.equals("*"))
+                    {
+                        result = (num_one * num_two) / 100;
+                        edittxt.setText(String.valueOf(result));
+                        num_one = result;
+                        operator = "";
+                    }
+                    else if (operator.equals("/"))
+                    {
+                        result = (num_one / num_two) * 100;
+                        edittxt.setText(String.valueOf(result));
+                        num_one = result;
+                        operator = "";
+                    }
+                }
+            }
+        });
     }
 }
