@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,10 +17,13 @@ public class MainActivity extends AppCompatActivity {
     Button btn0 , btn1 , btn2 , btn3 , btn4 , btn5 , btn6 , btn7 , btn8 , btn9 , btn_ac , btn_plus_minus;
     Button btn_percnet , btn_divide , btn_multiply , btn_add , btn_submission , btn_equal , btn_decimal;
     EditText edittxt;
-    double num_one = 0.999999999999;
-    double num_two = 0.999999999999;
+    BigDecimal num_one = new BigDecimal("0.999999999999");
+    BigDecimal num_two = new BigDecimal("0.999999999999");
+    BigDecimal result = new BigDecimal("0.999999999999");
+//    double num_one = 0.999999999999;
+//    double num_two = 0.999999999999;
+//    double result = 0.999999999999;
     String operator = "";
-    double result = 0.999999999999;
     ArrayList<Button> NumButtons = new ArrayList<Button>();
     ArrayList<Button> OperatorButtons = new ArrayList<Button>();
 
@@ -92,30 +96,39 @@ public class MainActivity extends AppCompatActivity {
                         {
                             if (operator.equals("+"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one += num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one += num_two;
+                                num_one = num_one.add(num_two);
                             }
                             else if (operator.equals("-"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one -= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one -= num_two;
+                                num_one = num_one.subtract(num_two);
                             }
                             else if (operator.equals("*"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one *= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one *= num_two;
+                                num_one = num_one.multiply(num_two);
                             }
                             else if (operator.equals("/"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one /= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one /= num_two;
+                                num_one = num_one.divide(num_two);
                             }
                             operator = "+";
                             edittxt.setText("");
                         }
                         else
                         {
-                            num_one = Double.parseDouble(edittxt.getText().toString());
+                            num_one = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                            num_one = Double.parseDouble(edittxt.getText().toString());
                             operator = "+";
                             edittxt.setText("");
                         }
@@ -135,30 +148,39 @@ public class MainActivity extends AppCompatActivity {
                         {
                             if (operator.equals("+"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one += num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one += num_two;
+                                num_one = num_one.add(num_two);
                             }
                             else if (operator.equals("-"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one -= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one -= num_two;
+                                num_one = num_one.subtract(num_two);
                             }
                             else if (operator.equals("*"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one *= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one *= num_two;
+                                num_one = num_one.multiply(num_two);
                             }
                             else if (operator.equals("/"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one /= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one /= num_two;
+                                num_one = num_one.divide(num_two);
                             }
                             operator = "-";
                             edittxt.setText("");
                         }
                         else
                         {
-                            num_one = Double.parseDouble(edittxt.getText().toString());
+                            num_one = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                            num_one = Double.parseDouble(edittxt.getText().toString());
                             operator = "-";
                             edittxt.setText("");
                         }
@@ -178,30 +200,39 @@ public class MainActivity extends AppCompatActivity {
                         {
                             if (operator.equals("+"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one += num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one += num_two;
+                                num_one = num_one.add(num_two);
                             }
                             else if (operator.equals("-"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one -= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one -= num_two;
+                                num_one = num_one.subtract(num_two);
                             }
                             else if (operator.equals("*"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one *= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one *= num_two;
+                                num_one = num_one.multiply(num_two);
                             }
                             else if (operator.equals("/"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one /= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one /= num_two;
+                                num_one = num_one.divide(num_two);
                             }
                             operator = "*";
                             edittxt.setText("");
                         }
                         else
                         {
-                            num_one = Double.parseDouble(edittxt.getText().toString());
+                            num_one = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                            num_one = Double.parseDouble(edittxt.getText().toString());
                             operator = "*";
                             edittxt.setText("");
                         }
@@ -221,30 +252,39 @@ public class MainActivity extends AppCompatActivity {
                         {
                             if (operator.equals("+"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one += num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one += num_two;
+                                num_one = num_one.add(num_two);
                             }
                             else if (operator.equals("-"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one -= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one -= num_two;
+                                num_one = num_one.subtract(num_two);
                             }
                             else if (operator.equals("*"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one *= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one *= num_two;
+                                num_one = num_one.multiply(num_two);
                             }
                             else if (operator.equals("/"))
                             {
-                                num_two = Double.parseDouble(edittxt.getText().toString());
-                                num_one /= num_two;
+                                num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                                num_two = Double.parseDouble(edittxt.getText().toString());
+//                                num_one /= num_two;
+                                num_one = num_one.divide(num_two);
                             }
                             operator = "/";
                             edittxt.setText("");
                         }
                         else
                         {
-                            num_one = Double.parseDouble(edittxt.getText().toString());
+                            num_one = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                            num_one = Double.parseDouble(edittxt.getText().toString());
                             operator = "/";
                             edittxt.setText("");
                         }
@@ -257,13 +297,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (edittxt.getText().toString().equals("") && result == 0.999999999999)
+                if (edittxt.getText().toString().equals("") && result.equals("0.999999999999") == true) //result == 0.999999999999
                 {
-
+                    System.out.println("Son of a bitch!");
                 }
-                else if (edittxt.getText().toString().equals("") && result != 0.999999999999)
+                else if (edittxt.getText().toString().equals("") && result.equals("0.999999999999") != true) //result != 0.999999999999
                 {
                     edittxt.setText(String.valueOf(result));
+                    System.out.println("Son of a bastard!");
                 }
                 else if (operator.equals(""))
                 {
@@ -274,17 +315,21 @@ public class MainActivity extends AppCompatActivity {
                 {
                     if (operator.equals("+"))
                     {
-                        num_two = Double.parseDouble(edittxt.getText().toString());
-                        result = num_one + num_two;
+                        num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                        num_two = Double.parseDouble(edittxt.getText().toString());
+                        result = num_one.add(num_two);
+//                        result = num_one + num_two;
                         edittxt.setText(String.valueOf(result));
                         num_one = result;
                         operator = "";
                     }
 
-                    else if (operator.equals('-'))
+                    else if (operator.equals("-"))
                     {
-                        num_two = Double.parseDouble(edittxt.getText().toString());
-                        result = num_one - num_two;
+                        num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                        num_two = Double.parseDouble(edittxt.getText().toString());
+                        result = num_one.subtract(num_two);
+//                        result = num_one - num_two;
                         edittxt.setText(String.valueOf(result));
                         num_one = result;
                         operator = "";
@@ -292,8 +337,10 @@ public class MainActivity extends AppCompatActivity {
 
                     else if (operator.equals("*"))
                     {
-                        num_two = Double.parseDouble(edittxt.getText().toString());
-                        result = num_one * num_two;
+                        num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                        num_two = Double.parseDouble(edittxt.getText().toString());
+                        result = num_one.multiply(num_two);
+//                        result = num_one * num_two;
                         edittxt.setText(String.valueOf(result));
                         num_one = result;
                         operator = "";
@@ -301,8 +348,10 @@ public class MainActivity extends AppCompatActivity {
 
                     else if (operator.equals("/"))
                     {
-                        num_two = Double.parseDouble(edittxt.getText().toString());
-                        result = num_one / num_two;
+                        num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                        num_two = Double.parseDouble(edittxt.getText().toString());
+                        result = num_one.divide(num_two);
+//                        result = num_one / num_two;
                         edittxt.setText(String.valueOf(result));
                         num_one = result;
                         operator = "";
@@ -310,8 +359,11 @@ public class MainActivity extends AppCompatActivity {
 
                     else if (operator.equals("%"))
                     {
-                        num_two = Double.parseDouble(edittxt.getText().toString());
-                        result = num_two / 100;
+                        num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                        num_two = Double.parseDouble(edittxt.getText().toString());
+                        BigDecimal one_hundred = new BigDecimal("100");
+                        result = num_two.divide(one_hundred);
+//                        result = num_two / 100;
                         edittxt.setText(String.valueOf(result));
                         num_one = result;
                         operator = "";
@@ -351,11 +403,19 @@ public class MainActivity extends AppCompatActivity {
         btn_ac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (edittxt.getText().toString().equals("") && result != 0.999999999999)
-                    result = 0.999999999999;
+                if (edittxt.getText().toString().equals("") && result.equals("0.999999999999") == false) //result != 0.999999999999
+                {
+                    BigDecimal temp = new BigDecimal("0.999999999999");
+                    result = temp;
+                    System.out.println("Bitch");
+//                    result = 0.999999999999;
+                }
 
                 else
+                {
                     edittxt.setText("");
+                    System.out.println("Bastard");
+                }
             }
         });
 
@@ -371,17 +431,23 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if (edittxt.getText().toString().equals("") != true)
                     {
-                        num_one = Double.parseDouble(edittxt.getText().toString());
+                        num_one = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+//                        num_one = Double.parseDouble(edittxt.getText().toString());
                         operator = "%";
                         edittxt.setText("");
                     }
                 }
                 else
                 {
-                    num_two = Double.parseDouble(edittxt.getText().toString());
+                    num_two = BigDecimal.valueOf(Double.parseDouble(edittxt.getText().toString()));
+                    BigDecimal one_hundred = new BigDecimal("100");
+//                    num_two = Double.parseDouble(edittxt.getText().toString());
                     if (operator.equals("+"))
                     {
-                        num_one += (num_two * num_one) / 100;
+                        BigDecimal temp = new BigDecimal("0");
+                        temp = num_one.multiply(num_two).divide(one_hundred);
+                        num_one = num_one.add(temp);
+//                        num_one += (num_two * num_one) / 100;
                         result = num_one;
                         edittxt.setText(String.valueOf(result));
                         num_one = result;
@@ -389,7 +455,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if (operator.equals("-"))
                     {
-                        num_one -= (num_two * num_one) / 100;
+                        BigDecimal temp = new BigDecimal("0");
+                        temp = num_one.multiply(num_two).divide(one_hundred);
+                        num_one.subtract(temp);
+//                        num_one -= (num_two * num_one) / 100;
                         result = num_one;
                         edittxt.setText(String.valueOf(result));
                         num_one = result;
@@ -397,14 +466,20 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else if (operator.equals("*"))
                     {
-                        result = (num_one * num_two) / 100;
+                        BigDecimal temp = new BigDecimal("0");
+                        temp = num_one.multiply(num_two).divide(one_hundred);
+                        result = temp;
+//                        result = (num_one * num_two) / 100;
                         edittxt.setText(String.valueOf(result));
                         num_one = result;
                         operator = "";
                     }
                     else if (operator.equals("/"))
                     {
-                        result = (num_one / num_two) * 100;
+                        BigDecimal temp = new BigDecimal("0");
+                        temp = num_one.multiply(one_hundred).divide(num_two);
+                        result = temp;
+//                        result = (num_one / num_two) * 100;
                         edittxt.setText(String.valueOf(result));
                         num_one = result;
                         operator = "";
